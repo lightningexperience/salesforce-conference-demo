@@ -57,7 +57,7 @@ function showSessionDetails(sessionId) {
                                 '<p>' + (session.nubank__Session__r.nubank__Session_Date__c || 'No time yet')+ '</p>' +
                             '</li>' +
                             '<li class="table-view-cell">Speaker: ' +
-                                session.nubank__Speaker__r.First_Name__c +
+                                session.nubank__Speaker__r.nubank__First_Name__c +
                             '</li>' +
                             '<li class="table-view-cell">' +
                                 (session.nubank__Session__r.nubank__Description__c || 'No description yet') +
