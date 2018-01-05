@@ -1,15 +1,15 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Session__r.Id, Session__r.Name FROM Session_Speaker__c";
+  var soql = "SELECT nubank__Session__r.Id, nubank__Session__r.Name FROM nubank__Session_Speaker__c";
   force.query(soql, success, error);
 }
 
 function getSessionDetails(sessionId, success, error) {
-  var soql = "SELECT Session__r.Name, " +
-  "Session__r.Session_Date__c, " +
-  "Speaker__r.First_Name__c, " +
-  "Speaker__r.Last_Name__c " +
-  "FROM Session_Speaker__c " +
-  "WHERE Session__r.Id = '" + sessionId + "'";
+  var soql = "SELECT nubank__Session__r.Name, " +
+  "nubank__Session__r.nubank__Session_Date__c, " +
+  "nubank__vSpeaker__r.nubank__First_Name__c, " +
+  "nubank__Speaker__r.nubank__Last_Name__c " +
+  "FROM nubank__Session_Speaker__c " +
+  "WHERE nubank__Session__r.Id = '" + sessionId + "'";
   force.query(soql, success, error);
 }
 
