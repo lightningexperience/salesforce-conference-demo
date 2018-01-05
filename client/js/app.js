@@ -6,7 +6,7 @@ function getSessionList(success, error) {
 function getSessionDetails(sessionId, success, error) {
   var soql = "SELECT nubank__Session__r.Name, " +
   "nubank__Session__r.nubank__Session_Date__c, " +
-  "nubank__vSpeaker__r.nubank__First_Name__c, " +
+  "nubank__Speaker__r.nubank__First_Name__c, " +
   "nubank__Speaker__r.nubank__Last_Name__c " +
   "FROM nubank__Session_Speaker__c " +
   "WHERE nubank__Session__r.Id = '" + sessionId + "'";
