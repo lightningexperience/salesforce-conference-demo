@@ -19,7 +19,7 @@ function showSessionList() {
             var sessions = data.records,
                 html = '';
             for (var i=0; i<sessions.length; i++) {
-                html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].Session__r.Id +'">' + sessions[i].nubank__Session__r.Name + '</a></li>';
+                html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].nubank__Session__r.Id +'">' + sessions[i].nubank__Session__r.Name + '</a></li>';
             }
             html =
                 '<div class="page">' +
@@ -53,7 +53,7 @@ function showSessionDetails(sessionId) {
                     '<div class="card">' +
                         '<ul class="table-view">' +
                             '<li class="table-view-cell">' +
-                                '<h4>' + session.Session__r.Name + '</h4>' +
+                                '<h4>' + session.nubank__Session__r.Name + '</h4>' +
                                 '<p>' + (session.nubank__Session__r.nubank__Session_Date__c || 'No time yet')+ '</p>' +
                             '</li>' +
                             '<li class="table-view-cell">Speaker: ' +
