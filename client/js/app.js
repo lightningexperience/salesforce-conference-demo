@@ -22,7 +22,7 @@ function showSessionList() {
                 html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].nubank__Session__r.Id +'">' + sessions[i].nubank__Session__r.Name + '</a></li>';
             }
             html =
-                '<div class="page">' +
+                '<div class="page style=\"margin:20px;\"">' +
                 '<header class="bar bar-nav">' +
                     '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs</h1>' +
                 '</header>' +
