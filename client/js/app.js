@@ -44,7 +44,7 @@ function showSessionDetails(sessionId) {
         function (data) {
             var session = data.records[0],
             html =
-                '<div class="page">' +
+                '<div class="page style=\"margin:20px;\"">' +
                 '<header class="bar bar-nav">' +
                 '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
             '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs </h1>' +
