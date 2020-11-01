@@ -1,17 +1,8 @@
 function getSessionList(success, error) {
-  var soql = "SELECT nubank__Session__r.Id, nubank__Session__r.Name FROM nubank__Session_Speaker__c";
+  var soql = "SELECT Name,Email__c,Phone FROM Account WHERE Email__c LIKE '%force.com%'";
   force.query(soql, success, error);
 }
 
-function getSessionDetails(sessionId, success, error) {
-  var soql = "SELECT nubank__Session__r.Name, " +
-  "nubank__Session__r.nubank__Session_Date__c, " +
-  "nubank__Speaker__r.nubank__First_Name__c, " +
-  "nubank__Speaker__r.nubank__Last_Name__c " +
-  "FROM nubank__Session_Speaker__c " +
-  "WHERE nubank__Session__r.Id = '" + sessionId + "'";
-  force.query(soql, success, error);
-}
 
 function showSessionList() {
     getSessionList(
@@ -38,42 +29,7 @@ function showSessionList() {
     return false;
 }
 
-function showSessionDetails(sessionId) {
 
-    getSessionDetails(sessionId,
-        function (data) {
-            var session = data.records[0],
-            html =
-                '<div class="page style=\"margin:20px;\"">' +
-                '<header class="bar bar-nav">' +
-                '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
-            '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs </h1>' +
-                '</header>' +
-                '<div class="content">' +
-                    '<div class="card">' +
-                        '<ul class="table-view">' +
-                            '<li class="table-view-cell">' +
-                                '<h4>' + session.nubank__Session__r.Name + '</h4>' +
-                                '<p>' + (session.nubank__Session__r.nubank__Session_Date__c || 'No time yet')+ '</p>' +
-                            '</li>' +
-                            '<li class="table-view-cell">Speaker: ' +
-                                session.nubank__Speaker__r.nubank__First_Name__c +
-                            '</li>' +
-                            '<li class="table-view-cell">' +
-                                (session.nubank__Session__r.nubank__Description__c || 'No description yet') +
-                            '</li>' +
-                        '</ul>' +
-                    '</div>' +
-                '</div>' +
-                '</div>';
-            slider.slidePage($(html));
-        },
-        function (error) {
-            alert("Error: " + JSON.stringify(error));
-        });
-    return false;
-}
 
 var slider = new PageSlider($('body')); // Initialize PageSlider micro-library for nice and hardware-accelerated page transitions
 router.addRoute('', showSessionList);
-router.addRoute('sessions/:id', showSessionDetails);
