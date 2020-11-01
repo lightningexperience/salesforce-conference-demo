@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Session__r.Id, Session__r.Name FROM Session_Speaker__c";
+  var soql = "SELECT nubank__Session__r.Id, nubank__Session__r.Name FROM nubank__Session_Speaker__c";
   force.query(soql, success, error);
 }
 
