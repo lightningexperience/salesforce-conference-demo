@@ -7,15 +7,15 @@ function getSessionList(success, error) {
 function showSessionList() {
     getSessionList(
         function (data) {
-            var sessions = data.records,
+            var accounts = data.records,
                 html = '';
-            for (var i=0; i<sessions.length; i++) {
-                html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].nubank__Session__r.Id +'">' + sessions[i].nubank__Session__r.Name + '</a></li>';
+            for (var i=0; i<accounts.length; i++) {
+                html += '<li class="table-view-cell"><a href="#accounts/'+  accounts[i].Account.Name + '</a></li>';
             }
             html =
                 '<div class="page style=\"margin:20px;\"">' +
                 '<header class="bar bar-nav">' +
-                    '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs</h1>' +
+                    '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs & oAuth20.0</h1>' +
                 '</header>' +
                 '<div class="content">' +
                     '<ul class="table-view session-list">' + html + '</ul>' +
