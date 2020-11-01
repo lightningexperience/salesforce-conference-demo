@@ -15,7 +15,7 @@ function showSessionList() {
             html =
                 '<div class="page style=\"margin:20px;\"">' +
                 '<header class="bar bar-nav">' +
-                    '<h1 class="title">Sessions - Data is pulled from Salesforce using REST APIs & oAuth20.0</h1>' +
+                    '<h1 class="title">Data is pulled from Salesforce using REST APIs & oAuth20.0</h1>' +
                 '</header>' +
                 '<div class="content">' +
                     '<ul class="table-view session-list">' + html + '</ul>' +
