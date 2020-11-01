@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Name,Email__c,Phone FROM Account";
+  var soql = "SELECT Account.Name,Account.Email__c,Account.Phone FROM Account limit 10";
   force.query(soql, success, error);
 }
 
@@ -10,7 +10,7 @@ function showSessionList() {
             var accounts = data.records,
                 html = '';
             for (var i=0; i<accounts.length; i++) {
-                html += '<li class="table-view-cell"><a href="#accounts/'+  accounts[i].Name + '</a></li>';
+                html += '<li class="table-view-cell"><a href="#accounts/'+  accounts[i].Account.Name + '</a></li>';
             }
             html =
                 '<div class="page style=\"margin:20px;\"">' +
