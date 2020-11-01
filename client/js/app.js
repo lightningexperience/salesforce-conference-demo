@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT ffaizi-20200408-demo.Name,ffaizi-20200408-demo.Email__c,ffaizi-20200408-demo.Phone FROM ffaizi-20200408-demo.Account WHERE ffaizi-20200408-demo.Email__c LIKE '%force.com%'";
+  var soql = "SELECT ffaizi-20200408-demo_Name,ffaizi-20200408-demo_Email__c,ffaizi-20200408-demo_Phone FROM ffaizi-20200408-demo_Account WHERE ffaizi-20200408-demo_Email__c LIKE '%force.com%'";
   force.query(soql, success, error);
 }
 
@@ -10,7 +10,7 @@ function showSessionList() {
             var accounts = data.records,
                 html = '';
             for (var i=0; i<accounts.length; i++) {
-                html += '<li class="table-view-cell"><a href="#accounts/'+  accounts[i].ffaizi-20200408-demo.Account.Name + '</a></li>';
+                html += '<li class="table-view-cell"><a href="#accounts/'+  accounts[i].ffaizi-20200408-demo_Account.Name + '</a></li>';
             }
             html =
                 '<div class="page style=\"margin:20px;\"">' +
