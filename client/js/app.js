@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Name,Email__c,Phone FROM Account WHERE Email__c LIKE '%force.com%'";
+  var soql = "SELECT Name,Email__c,Phone FROM Account";
   force.query(soql, success, error);
 }
 
